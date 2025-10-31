@@ -1,0 +1,45 @@
+<mujoco model="basketball_hoop">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="DefaultMaterial_baseColor" file="DefaultMaterial_baseColor.png"/>
+    <material name="mat0" texture="DefaultMaterial_baseColor" specular="0.5" shininess="0.0"/>
+    <mesh file="basketball_hoop.obj"/>
+    <mesh file="basketball_hoop_collision_0.obj"/>
+    <mesh file="basketball_hoop_collision_1.obj"/>
+    <mesh file="basketball_hoop_collision_2.obj"/>
+    <mesh file="basketball_hoop_collision_3.obj"/>
+    <mesh file="basketball_hoop_collision_4.obj"/>
+    <mesh file="basketball_hoop_collision_5.obj"/>
+    <mesh file="basketball_hoop_collision_6.obj"/>
+    <mesh file="basketball_hoop_collision_7.obj"/>
+    <mesh file="basketball_hoop_collision_8.obj"/>
+    <mesh file="basketball_hoop_collision_9.obj"/>
+    <mesh file="basketball_hoop_collision_10.obj"/>
+    <mesh file="basketball_hoop_collision_11.obj"/>
+  </asset>
+  <worldbody>
+    <body name="basketball_hoop">
+      <freejoint/>
+      <geom material="mat0" mesh="basketball_hoop" class="visual"/>
+      <geom mesh="basketball_hoop_collision_0" rgba="0.7033000528064982 0.5943451226043865 0.052573879558378 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_1" rgba="0.062241422217419684 0.6263964443264018 0.9582663544906546 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_2" rgba="0.6761724366030619 0.6997537641005955 0.6484093855628085 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_3" rgba="0.9858168760751511 0.9960230637242565 0.6678591330778599 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_4" rgba="0.7846775521095166 0.3297086818724131 0.4951009930760015 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_5" rgba="0.789816348323934 0.8679829859919833 0.812671799799739 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_6" rgba="0.2880711842735867 0.8823929660443717 0.2797490884563727 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_7" rgba="0.6631647658542256 0.07542775280687597 0.3751571994372782 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_8" rgba="0.8256924965194737 0.39144954476062255 0.7727081902939559 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_9" rgba="0.4146516217897299 0.2479397969740924 0.9960729262081648 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_10" rgba="0.536064982354534 0.817894862225429 0.2115482136290524 1" class="collision"/>
+      <geom mesh="basketball_hoop_collision_11" rgba="0.034048640965542276 0.05253230587863156 0.4427510175893672 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>

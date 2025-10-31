@@ -1,6 +1,3 @@
-# Large asset files
-assets/
-
 # Python
 __pycache__/
 *.py[cod]

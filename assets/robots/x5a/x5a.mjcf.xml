@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<mujoco>
+  <default>
+    <default class="x5a-robot">
+      <default class="x5a-motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="x5a-visual">
+        <geom material="x5a-visualgeom" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="x5a-collision">
+        <geom material="x5a-collision_material" condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" friction="1 0.01 0.01"/>
+        <equality solimp="0.99 0.999 1e-05" solref="0.005 1"/>
+      </default>
+    </default>
+  </default>
+  <compiler angle="radian"/>
+  <asset>
+    <material name="x5a-" rgba="1 1 1 1"/>
+    <material name="x5a-default_material" rgba="0.7 0.7 0.7 1"/>
+    <material name="x5a-collision_material" rgba="1.0 0.28 0.1 0.9"/>
+    <mesh name="x5a-base_link.STL" file="./base_link.STL"/>
+    <mesh name="x5a-link1.STL" file="./link1.STL"/>
+    <mesh name="x5a-link2.STL" file="./link2.STL"/>
+    <mesh name="x5a-link3.STL" file="./link3.STL"/>
+    <mesh name="x5a-link4.STL" file="./link4.STL"/>
+    <mesh name="x5a-link5.STL" file="./link5.STL"/>
+    <mesh name="x5a-link6.STL" file="./link6.STL"/>
+    <mesh name="x5a-link7.STL" file="./link7.STL"/>
+    <mesh name="x5a-link8.STL" file="./link8.STL"/>
+  </asset>
+  <worldbody>
+    <body name="x5a-base_link" pos="0.00000000 0.00000000 0.00000000" quat="1 0 0 0" childclass="x5a-robot">
+      <joint name="x5a-floating_base"/>
+      <geom name="x5a-base_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-base_link.STL" class="x5a-collision"/>
+      <geom name="x5a-base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-base_link.STL" class="x5a-visual"/>
+      <body name="x5a-link1" pos="0 0 0.0605" quat="1.0 0.0 0.0 0.0">
+        <joint name="x5a-joint1" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="0 0 1"/>
+        <inertial pos="0.0054231 -0.0080289 0.017086" quat="1.0 0.0 0.0 0.0" mass="0.066982" diaginertia="8e-05 3e-05 8e-05"/>
+        <geom name="x5a-link1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link1.STL" class="x5a-collision"/>
+        <geom name="x5a-link1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link1.STL" class="x5a-visual"/>
+        <body name="x5a-link2" pos="0.02 0 0.04" quat="1.0 0.0 0.0 0.0">
+          <joint name="x5a-joint2" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="0 1 0"/>
+          <inertial pos="-0.13237 0.0020852 0.00010549" quat="1.0 0.0 0.0 0.0" mass="1.0795" diaginertia="0.00051 0.01599 0.01605"/>
+          <geom name="x5a-link2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link2.STL" class="x5a-collision"/>
+          <geom name="x5a-link2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link2.STL" class="x5a-visual"/>
+          <body name="x5a-link3" pos="-0.264 0 0" quat="-3.673205103346574e-06 0.9999999999932537 0.0 -0.0">
+            <joint name="x5a-joint3" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="0 1 0"/>
+            <inertial pos="0.18531 0.00068376 -0.051638" quat="1.0 0.0 0.0 0.0" mass="0.54534" diaginertia="0.00036 0.00423 0.0042"/>
+            <geom name="x5a-link3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link3.STL" class="x5a-collision"/>
+            <geom name="x5a-link3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link3.STL" class="x5a-visual"/>
+            <body name="x5a-link4" pos="0.245 0 -0.056" quat="1.0 0.0 0.0 0.0">
+              <joint name="x5a-joint4" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="0 1 0"/>
+              <inertial pos="0.040231 0.0044807 -0.035335" quat="1.0 0.0 0.0 0.0" mass="0.11714" diaginertia="0.00019 0.00023 0.00014"/>
+              <geom name="x5a-link4_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link4.STL" class="x5a-collision"/>
+              <geom name="x5a-link4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link4.STL" class="x5a-visual"/>
+              <body name="x5a-link5" pos="0.06775 0.0005 -0.0865" quat="1.0 0.0 0.0 0.0">
+                <joint name="x5a-joint5" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="0 0 1"/>
+                <inertial pos="0.003612 -1.5455E-05 0.055214" quat="1.0 0.0 0.0 0.0" mass="0.63488" diaginertia="0.00083 0.00082 0.00026"/>
+                <geom name="x5a-link5_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link5.STL" class="x5a-collision"/>
+                <geom name="x5a-link5_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link5.STL" class="x5a-visual"/>
+                <body name="x5a-link6" pos="0.02895 0 0.0865" quat="-3.673205103346574e-06 -0.9999999999932537 -0.0 0.0">
+                  <joint name="x5a-joint6" type="hinge" ref="0.0" class="x5a-motor" range="-10 10" axis="1 0 0"/>
+                  <inertial pos="0.041697 2.4368E-05 0.00014464" quat="1.0 0.0 0.0 0.0" mass="0.44089" diaginertia="0.00038 0.00028 0.0005"/>
+                  <geom name="x5a-link6_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link6.STL" class="x5a-collision"/>
+                  <geom name="x5a-link6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link6.STL" class="x5a-visual"/>
+                  <body name="x5a-link7" pos="0.08657 0.024896 -0.0002436" quat="1.0 0.0 0.0 0.0">
+                    <joint name="x5a-joint7" type="slide" ref="0.0" class="x5a-motor" range="0 0.044" axis="0 1 0"/>
+                    <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="1.0 0.0 0.0 0.0" mass="0.064798" diaginertia="2e-05 3e-05 3e-05"/>
+                    <geom name="x5a-link7_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link7.STL" class="x5a-collision"/>
+                    <geom name="x5a-link7_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link7.STL" class="x5a-visual"/>
+                  </body>
+                  <body name="x5a-link8" pos="0.08657 -0.0249 -0.00024366" quat="1.0 0.0 0.0 0.0">
+                    <joint name="x5a-joint8" type="slide" ref="0.0" class="x5a-motor" range="0 0.044" axis="0 -1 0"/>
+                    <inertial pos="-0.00035522 0.0078277 0.0024201" quat="1.0 0.0 0.0 0.0" mass="0.064798" diaginertia="2e-05 3e-05 3e-05"/>
+                    <geom name="x5a-link8_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x5a-link8.STL" class="x5a-collision"/>
+                    <geom name="x5a-link8_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x5a-" type="mesh" mesh="x5a-link8.STL" class="x5a-visual"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <site name="x5a-base_link_site" pos="0 0 0" quat="1 0 0 0"/>
+      <camera name="x5a-front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5"/>
+      <camera name="x5a-side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5"/>
+    </body>
+    <body mocap="true" name="x5a-mocap-1" pos="0.2  0.0  0.16" quat="0 0 1 0">
+      <site name="x5a-mocap-site-1" size=".035" type="sphere" rgba="0.13 0.3 0.2 1"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="x5a-joint1_ctrl" joint="x5a-joint1" class="x5a-motor"/>
+    <motor name="x5a-joint2_ctrl" joint="x5a-joint2" class="x5a-motor"/>
+    <motor name="x5a-joint3_ctrl" joint="x5a-joint3" class="x5a-motor"/>
+    <motor name="x5a-joint4_ctrl" joint="x5a-joint4" class="x5a-motor"/>
+    <motor name="x5a-joint5_ctrl" joint="x5a-joint5" class="x5a-motor"/>
+    <motor name="x5a-joint6_ctrl" joint="x5a-joint6" class="x5a-motor"/>
+    <motor name="x5a-joint7_ctrl" joint="x5a-joint7" class="x5a-motor"/>
+    <motor name="x5a-joint8_ctrl" joint="x5a-joint8" class="x5a-motor"/>
+  </actuator>
+  <contact>
+    <exclude body1="x5a-base_link" body2="x5a-link1"/>
+    <exclude body1="x5a-link1" body2="x5a-link2"/>
+    <exclude body1="x5a-link2" body2="x5a-link3"/>
+    <exclude body1="x5a-link3" body2="x5a-link4"/>
+    <exclude body1="x5a-link4" body2="x5a-link5"/>
+    <exclude body1="x5a-link5" body2="x5a-link6"/>
+    <exclude body1="x5a-link6" body2="x5a-link7"/>
+    <exclude body1="x5a-link6" body2="x5a-link8"/>
+  </contact>
+  <sensor>
+    <framepos name="x5a-base_link_site_pos" objtype="site" objname="x5a-base_link_site"/>
+    <framequat name="x5a-base_link_site_quat" objtype="site" objname="x5a-base_link_site"/>
+    <framelinvel name="x5a-base_link_site_linvel" objtype="site" objname="x5a-base_link_site"/>
+    <frameangvel name="x5a-base_link_site_angvel" objtype="site" objname="x5a-base_link_site"/>
+    <velocimeter name="x5a-base_link_site_vel" site="x5a-base_link_site"/>
+  </sensor>
+  <equality>
+    <weld body1="x5a-link6" body2="x5a-mocap-1"/>
+  </equality>
+</mujoco>

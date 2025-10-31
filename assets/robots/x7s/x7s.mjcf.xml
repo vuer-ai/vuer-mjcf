@@ -1,0 +1,258 @@
+<?xml version="1.0" ?>
+<mujoco>
+  <default>
+    <default class="x7s-robot">
+      <default class="x7s-motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="x7s-visual">
+        <geom material="x7s-visualgeom" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="x7s-collision">
+        <geom material="x7s-collision_material" condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" friction="1 0.01 0.01"/>
+        <equality solimp="0.99 0.999 1e-05" solref="0.005 1"/>
+      </default>
+    </default>
+  </default>
+  <compiler angle="radian"/>
+  <asset>
+    <material name="x7s-" rgba="0.898039215686275 0.917647058823529 0.929411764705882 1"/>
+    <material name="x7s-default_material" rgba="0.7 0.7 0.7 1"/>
+    <material name="x7s-collision_material" rgba="1.0 0.28 0.1 0.9"/>
+    <mesh name="x7s-base_link.STL" file="./base_link.STL"/>
+    <mesh name="x7s-link1.STL" file="./link1.STL"/>
+    <mesh name="x7s-link2.STL" file="./link2.STL"/>
+    <mesh name="x7s-link3.STL" file="./link3.STL"/>
+    <mesh name="x7s-link4.STL" file="./link4.STL"/>
+    <mesh name="x7s-link5.STL" file="./link5.STL"/>
+    <mesh name="x7s-link6.STL" file="./link6.STL"/>
+    <mesh name="x7s-link7.STL" file="./link7.STL"/>
+    <mesh name="x7s-link8.STL" file="./link8.STL"/>
+    <mesh name="x7s-link9.STL" file="./link9.STL"/>
+    <mesh name="x7s-link10.STL" file="./link10.STL"/>
+    <mesh name="x7s-link11.STL" file="./link11.STL"/>
+    <mesh name="x7s-link12.STL" file="./link12.STL"/>
+    <mesh name="x7s-link13.STL" file="./link13.STL"/>
+    <mesh name="x7s-link14.STL" file="./link14.STL"/>
+    <mesh name="x7s-link15.STL" file="./link15.STL"/>
+    <mesh name="x7s-link16.STL" file="./link16.STL"/>
+    <mesh name="x7s-link17.STL" file="./link17.STL"/>
+    <mesh name="x7s-link18.STL" file="./link18.STL"/>
+    <mesh name="x7s-link19.STL" file="./link19.STL"/>
+    <mesh name="x7s-link20.STL" file="./link20.STL"/>
+    <mesh name="x7s-link21.STL" file="./link21.STL"/>
+    <mesh name="x7s-link22.STL" file="./link22.STL"/>
+  </asset>
+  <worldbody>
+    <body name="x7s-base_link" pos="0.00000000 0.00000000 0.00000000" quat="1 0 0 0" childclass="x7s-robot">
+      <joint name="x7s-floating_base"/>
+      <geom name="x7s-base_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-base_link.STL" class="x7s-collision"/>
+      <geom name="x7s-base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-base_link.STL" class="x7s-visual"/>
+      <body name="x7s-link1" pos="0.096 0 0.31" quat="1.0 0.0 0.0 0.0">
+        <joint name="x7s-joint1" type="slide" ref="0.0" class="x7s-motor" range="0 0.54" axis="0 0 1"/>
+        <inertial pos="-0.010805 -0.00069779 -0.059694" quat="1.0 0.0 0.0 0.0" mass="6.205" diaginertia="0.01994 0.06039 0.06721"/>
+        <geom name="x7s-link1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link1.STL" class="x7s-collision"/>
+        <geom name="x7s-link1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link1.STL" class="x7s-visual"/>
+        <body name="x7s-link2" pos="0.066 -0.0546 -0.06" quat="1.0 0.0 0.0 0.0">
+          <joint name="x7s-joint2" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 -1 0"/>
+          <inertial pos="-0.000779578835400224 0.053760645280584 0.220464314501233" quat="1.0 0.0 0.0 0.0" mass="3.01262653552798" diaginertia="0.03987 0.03461 0.00967"/>
+          <geom name="x7s-link2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link2.STL" class="x7s-collision"/>
+          <geom name="x7s-link2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link2.STL" class="x7s-visual"/>
+          <body name="x7s-link3" pos="0 0.0544 0.356" quat="1.0 0.0 0.0 0.0">
+            <joint name="x7s-joint3" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 0 1"/>
+            <inertial pos="-1.2166451790474E-08 0.000155101086835956 0.0414775143344981" quat="1.0 0.0 0.0 0.0" mass="0.429406588376073" diaginertia="0.00027 0.00026 0.00018"/>
+            <geom name="x7s-link3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link3.STL" class="x7s-collision"/>
+            <geom name="x7s-link3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link3.STL" class="x7s-visual"/>
+            <body name="x7s-link4" pos="0 -0.025 0.049" quat="1.0 0.0 0.0 0.0">
+              <joint name="x7s-joint4" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 -1 0"/>
+              <inertial pos="0.0145474612596931 0.0229595215513494 0.0787914285814235" quat="1.0 0.0 0.0 0.0" mass="1.54420437039843" diaginertia="0.00576 0.00477 0.00768"/>
+              <geom name="x7s-link4_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link4.STL" class="x7s-collision"/>
+              <geom name="x7s-link4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link4.STL" class="x7s-visual"/>
+            </body>
+          </body>
+          <body name="x7s-link5" pos="0 0.1424 0.28" quat="1.0 0.0 0.0 0.0">
+            <joint name="x7s-joint5" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 1 0"/>
+            <inertial pos="0.0203118776657915 0.0282074621926044 -0.000172803675324795" quat="1.0 0.0 0.0 0.0" mass="0.131891884746085" diaginertia="0.00012 9e-05 0.00014"/>
+            <geom name="x7s-link5_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link5.STL" class="x7s-collision"/>
+            <geom name="x7s-link5_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link5.STL" class="x7s-visual"/>
+            <body name="x7s-link6" pos="0.02725 0.063 0" quat="1.0 0.0 0.0 0.0">
+              <joint name="x7s-joint6" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="-1 0 0"/>
+              <inertial pos="-0.0244518842072319 0.00440119803297737 -0.0251861647177716" quat="1.0 0.0 0.0 0.0" mass="1.03161675931573" diaginertia="0.00167 0.00166 0.00088"/>
+              <geom name="x7s-link6_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link6.STL" class="x7s-collision"/>
+              <geom name="x7s-link6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link6.STL" class="x7s-visual"/>
+              <body name="x7s-link7" pos="-0.02725 0 -0.0865" quat="1.0 0.0 0.0 0.0">
+                <joint name="x7s-joint7" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 0 -1"/>
+                <inertial pos="0.000827778295739684 -0.00148365067233044 -0.105295191761956" quat="1.0 0.0 0.0 0.0" mass="0.736099125577072" diaginertia="0.00229 0.0023 0.0006"/>
+                <geom name="x7s-link7_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link7.STL" class="x7s-collision"/>
+                <geom name="x7s-link7_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link7.STL" class="x7s-visual"/>
+                <body name="x7s-link8" pos="0 -0.02725 -0.1435" quat="1.0 0.0 0.0 0.0">
+                  <joint name="x7s-joint8" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 -1 0"/>
+                  <inertial pos="0.0593724453089232 0.0253235620813382 -0.0125969681001941" quat="1.0 0.0 0.0 0.0" mass="0.487506795308259" diaginertia="0.0004 0.00055 0.00069"/>
+                  <geom name="x7s-link8_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link8.STL" class="x7s-collision"/>
+                  <geom name="x7s-link8_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link8.STL" class="x7s-visual"/>
+                  <body name="x7s-link9" pos="0.0945 0.02725 -0.015" quat="1.0 0.0 0.0 0.0">
+                    <joint name="x7s-joint9" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="1 0 0"/>
+                    <inertial pos="0.0458969495196738 -0.000535552755431795 -9.66305755581987E-05" quat="1.0 0.0 0.0 0.0" mass="0.487431771518004" diaginertia="0.00024 0.00027 0.00029"/>
+                    <geom name="x7s-link9_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link9.STL" class="x7s-collision"/>
+                    <geom name="x7s-link9_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link9.STL" class="x7s-visual"/>
+                    <body name="x7s-link10" pos="0.05 -0.02725 0" quat="1.0 0.0 0.0 0.0">
+                      <joint name="x7s-joint10" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 -1 0"/>
+                      <inertial pos="0.0575036493913677 0.0264951119112793 0.00135889493052876" quat="1.0 0.0 0.0 0.0" mass="0.432944265521347" diaginertia="0.00025 0.00033 0.00041"/>
+                      <geom name="x7s-link10_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link10.STL" class="x7s-collision"/>
+                      <geom name="x7s-link10_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link10.STL" class="x7s-visual"/>
+                      <body name="x7s-link11" pos="0.066 0.02725 -0.022" quat="1.0 0.0 0.0 0.0">
+                        <joint name="x7s-joint11" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 0 -1"/>
+                        <inertial pos="0.0782374674886107 2.27688611500743E-05 0.0203907673011059" quat="1.0 0.0 0.0 0.0" mass="0.471847835335863" diaginertia="0.0004 0.00043 0.00064"/>
+                        <geom name="x7s-link11_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link11.STL" class="x7s-collision"/>
+                        <geom name="x7s-link11_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link11.STL" class="x7s-visual"/>
+                        <body name="x7s-link12" pos="0.12737 0.024896 0.021756" quat="1.0 0.0 0.0 0.0">
+                          <joint name="x7s-joint12" type="slide" ref="0.0" class="x7s-motor" range="0 0.044" axis="0 1 0"/>
+                          <inertial pos="-0.000355222592141713 -0.00782703850949387 -0.00298831676915334" quat="1.0 0.0 0.0 0.0" mass="0.0647981743053201" diaginertia="2e-05 3e-05 3e-05"/>
+                          <geom name="x7s-link12_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link12.STL" class="x7s-collision"/>
+                          <geom name="x7s-link12_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link12.STL" class="x7s-visual"/>
+                        </body>
+                        <body name="x7s-link13" pos="0.12737 -0.0249 0.021756" quat="1.0 0.0 0.0 0.0">
+                          <joint name="x7s-joint13" type="slide" ref="0.0" class="x7s-motor" range="0 0.044" axis="0 -1 0"/>
+                          <inertial pos="-0.000355223470276722 0.00782768741060949 0.00242005652832489" quat="1.0 0.0 0.0 0.0" mass="0.0647981725781686" diaginertia="2e-05 3e-05 3e-05"/>
+                          <geom name="x7s-link13_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link13.STL" class="x7s-collision"/>
+                          <geom name="x7s-link13_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link13.STL" class="x7s-visual"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+          <body name="x7s-link14" pos="0 -0.0336 0.28" quat="1.0 0.0 0.0 0.0">
+            <joint name="x7s-joint14" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 -1 0"/>
+            <inertial pos="0.0203118776657806 -0.0282074621926024 -0.000172803675324684" quat="1.0 0.0 0.0 0.0" mass="0.131891884746085" diaginertia="0.00012 9e-05 0.00014"/>
+            <geom name="x7s-link14_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link14.STL" class="x7s-collision"/>
+            <geom name="x7s-link14_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link14.STL" class="x7s-visual"/>
+            <body name="x7s-link15" pos="0.02725 -0.063 0" quat="1.0 0.0 0.0 0.0">
+              <joint name="x7s-joint15" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="-1 0 0"/>
+              <inertial pos="-0.0244518746422262 -0.00440118072836032 -0.0251861194488474" quat="1.0 0.0 0.0 0.0" mass="1.03161748745213" diaginertia="0.00167 0.00166 0.00088"/>
+              <geom name="x7s-link15_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link15.STL" class="x7s-collision"/>
+              <geom name="x7s-link15_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link15.STL" class="x7s-visual"/>
+              <body name="x7s-link16" pos="-0.02725 0 -0.0865" quat="1.0 0.0 0.0 0.0">
+                <joint name="x7s-joint16" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 0 -1"/>
+                <inertial pos="0.000827779970195369 0.0014843542246373 -0.105295189564578" quat="1.0 0.0 0.0 0.0" mass="0.73609919110615" diaginertia="0.00229 0.0023 0.0006"/>
+                <geom name="x7s-link16_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link16.STL" class="x7s-collision"/>
+                <geom name="x7s-link16_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link16.STL" class="x7s-visual"/>
+                <body name="x7s-link17" pos="0 0.02725 -0.1435" quat="1.0 0.0 0.0 0.0">
+                  <joint name="x7s-joint17" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 1 0"/>
+                  <inertial pos="0.0593724456215453 -0.025323327171846 -0.0127286630831199" quat="1.0 0.0 0.0 0.0" mass="0.48750674832378" diaginertia="0.0004 0.00055 0.00069"/>
+                  <geom name="x7s-link17_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link17.STL" class="x7s-collision"/>
+                  <geom name="x7s-link17_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link17.STL" class="x7s-visual"/>
+                  <body name="x7s-link18" pos="0.0945 -0.02725 -0.015" quat="1.0 0.0 0.0 0.0">
+                    <joint name="x7s-joint18" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="1 0 0"/>
+                    <inertial pos="0.0458969709559334 0.000535552755438318 -2.35788959310756E-05" quat="1.0 0.0 0.0 0.0" mass="0.487431771518004" diaginertia="0.00024 0.00027 0.00029"/>
+                    <geom name="x7s-link18_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link18.STL" class="x7s-collision"/>
+                    <geom name="x7s-link18_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link18.STL" class="x7s-visual"/>
+                    <body name="x7s-link19" pos="0.05 0.02725 0" quat="1.0 0.0 0.0 0.0">
+                      <joint name="x7s-joint19" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 1 0"/>
+                      <inertial pos="0.0575036493913393 -0.0265307053304072 0.00135892274814464" quat="1.0 0.0 0.0 0.0" mass="0.432944265521347" diaginertia="0.00025 0.00033 0.00041"/>
+                      <geom name="x7s-link19_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link19.STL" class="x7s-collision"/>
+                      <geom name="x7s-link19_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link19.STL" class="x7s-visual"/>
+                      <body name="x7s-link20" pos="0.066 -0.02725 -0.022" quat="1.0 0.0 0.0 0.0">
+                        <joint name="x7s-joint20" type="hinge" ref="0.0" class="x7s-motor" range="-10 10" axis="0 0 -1"/>
+                        <inertial pos="0.0782374674886106 2.27688611456334E-05 0.0203907673011835" quat="1.0 0.0 0.0 0.0" mass="0.471847835335862" diaginertia="0.0004 0.00043 0.00064"/>
+                        <geom name="x7s-link20_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link20.STL" class="x7s-collision"/>
+                        <geom name="x7s-link20_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link20.STL" class="x7s-visual"/>
+                        <body name="x7s-link21" pos="0.12737 0.024896 0.021756" quat="1.0 0.0 0.0 0.0">
+                          <joint name="x7s-joint21" type="slide" ref="0.0" class="x7s-motor" range="0 0.044" axis="0 1 0"/>
+                          <inertial pos="-0.000355222592142046 -0.0078270385094939 -0.00298831676915345" quat="1.0 0.0 0.0 0.0" mass="0.0647981743053201" diaginertia="2e-05 3e-05 3e-05"/>
+                          <geom name="x7s-link21_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link21.STL" class="x7s-collision"/>
+                          <geom name="x7s-link21_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link21.STL" class="x7s-visual"/>
+                        </body>
+                        <body name="x7s-link22" pos="0.12737 -0.0249 0.021756" quat="1.0 0.0 0.0 0.0">
+                          <joint name="x7s-joint22" type="slide" ref="0.0" class="x7s-motor" range="0 0.044" axis="0 -1 0"/>
+                          <inertial pos="-0.000355223470277055 0.00782768741060944 0.00242005652832467" quat="1.0 0.0 0.0 0.0" mass="0.0647981725781687" diaginertia="2e-05 3e-05 3e-05"/>
+                          <geom name="x7s-link22_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="x7s-link22.STL" class="x7s-collision"/>
+                          <geom name="x7s-link22_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="x7s-" type="mesh" mesh="x7s-link22.STL" class="x7s-visual"/>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <site name="x7s-base_link_site" pos="0 0 0" quat="1 0 0 0"/>
+      <camera name="x7s-front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5"/>
+      <camera name="x7s-side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5"/>
+    </body>
+    <body mocap="true" name="x7s-mocap-1" pos="0.500  0.15  0.285" quat="0 0 1 0">
+      <site name="x7s-mocap-site-1" size=".05" type="sphere" rgba="0.13 0.3 0.2 1"/>
+    </body>
+    <body mocap="true" name="x7s-mocap-2" pos="0.500 -0.15  0.285" quat="0 0 1 0">
+      <site name="x7s-mocap-site-2" size=".05" type="sphere" rgba="0.13 0.3 0.2 1"/>
+    </body>
+    <body mocap="true" name="x7s-mocap-3" pos="0.162 -0.025  0.725" quat="0 0 1 0">
+      <site name="x7s-mocap-site-3" size=".05" type="sphere" rgba="0.13 0.3 0.2 1"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="x7s-joint1_ctrl" joint="x7s-joint1" class="x7s-motor"/>
+    <motor name="x7s-joint2_ctrl" joint="x7s-joint2" class="x7s-motor"/>
+    <motor name="x7s-joint3_ctrl" joint="x7s-joint3" class="x7s-motor"/>
+    <motor name="x7s-joint4_ctrl" joint="x7s-joint4" class="x7s-motor"/>
+    <motor name="x7s-joint5_ctrl" joint="x7s-joint5" class="x7s-motor"/>
+    <motor name="x7s-joint6_ctrl" joint="x7s-joint6" class="x7s-motor"/>
+    <motor name="x7s-joint7_ctrl" joint="x7s-joint7" class="x7s-motor"/>
+    <motor name="x7s-joint8_ctrl" joint="x7s-joint8" class="x7s-motor"/>
+    <motor name="x7s-joint9_ctrl" joint="x7s-joint9" class="x7s-motor"/>
+    <motor name="x7s-joint10_ctrl" joint="x7s-joint10" class="x7s-motor"/>
+    <motor name="x7s-joint11_ctrl" joint="x7s-joint11" class="x7s-motor"/>
+    <motor name="x7s-joint12_ctrl" joint="x7s-joint12" class="x7s-motor"/>
+    <motor name="x7s-joint13_ctrl" joint="x7s-joint13" class="x7s-motor"/>
+    <motor name="x7s-joint14_ctrl" joint="x7s-joint14" class="x7s-motor"/>
+    <motor name="x7s-joint15_ctrl" joint="x7s-joint15" class="x7s-motor"/>
+    <motor name="x7s-joint16_ctrl" joint="x7s-joint16" class="x7s-motor"/>
+    <motor name="x7s-joint17_ctrl" joint="x7s-joint17" class="x7s-motor"/>
+    <motor name="x7s-joint18_ctrl" joint="x7s-joint18" class="x7s-motor"/>
+    <motor name="x7s-joint19_ctrl" joint="x7s-joint19" class="x7s-motor"/>
+    <motor name="x7s-joint20_ctrl" joint="x7s-joint20" class="x7s-motor"/>
+    <motor name="x7s-joint21_ctrl" joint="x7s-joint21" class="x7s-motor"/>
+    <motor name="x7s-joint22_ctrl" joint="x7s-joint22" class="x7s-motor"/>
+  </actuator>
+  <contact>
+    <exclude body1="x7s-base_link" body2="x7s-link1"/>
+    <exclude body1="x7s-link1" body2="x7s-link2"/>
+    <exclude body1="x7s-link2" body2="x7s-link3"/>
+    <exclude body1="x7s-link3" body2="x7s-link4"/>
+    <exclude body1="x7s-link2" body2="x7s-link5"/>
+    <exclude body1="x7s-link5" body2="x7s-link6"/>
+    <exclude body1="x7s-link6" body2="x7s-link7"/>
+    <exclude body1="x7s-link7" body2="x7s-link8"/>
+    <exclude body1="x7s-link8" body2="x7s-link9"/>
+    <exclude body1="x7s-link9" body2="x7s-link10"/>
+    <exclude body1="x7s-link10" body2="x7s-link11"/>
+    <exclude body1="x7s-link11" body2="x7s-link12"/>
+    <exclude body1="x7s-link11" body2="x7s-link13"/>
+    <exclude body1="x7s-link2" body2="x7s-link14"/>
+    <exclude body1="x7s-link14" body2="x7s-link15"/>
+    <exclude body1="x7s-link15" body2="x7s-link16"/>
+    <exclude body1="x7s-link16" body2="x7s-link17"/>
+    <exclude body1="x7s-link17" body2="x7s-link18"/>
+    <exclude body1="x7s-link18" body2="x7s-link19"/>
+    <exclude body1="x7s-link19" body2="x7s-link20"/>
+    <exclude body1="x7s-link20" body2="x7s-link21"/>
+    <exclude body1="x7s-link20" body2="x7s-link22"/>
+  </contact>
+  <sensor>
+    <framepos name="x7s-base_link_site_pos" objtype="site" objname="x7s-base_link_site"/>
+    <framequat name="x7s-base_link_site_quat" objtype="site" objname="x7s-base_link_site"/>
+    <framelinvel name="x7s-base_link_site_linvel" objtype="site" objname="x7s-base_link_site"/>
+    <frameangvel name="x7s-base_link_site_angvel" objtype="site" objname="x7s-base_link_site"/>
+    <velocimeter name="x7s-base_link_site_vel" site="x7s-base_link_site"/>
+  </sensor>
+  <equality>
+    <weld body1="x7s-link11" body2="x7s-mocap-1"/>
+    <weld body1="x7s-link20" body2="x7s-mocap-2"/>
+    <weld body1="x7s-link4" body2="x7s-mocap-3"/>
+  </equality>
+</mujoco>

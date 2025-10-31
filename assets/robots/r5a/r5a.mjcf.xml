@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<mujoco>
+  <default>
+    <default class="r5a-robot">
+      <default class="r5a-motor">
+        <joint/>
+        <motor/>
+      </default>
+      <default class="r5a-visual">
+        <geom material="r5a-visualgeom" contype="0" conaffinity="0" group="2"/>
+      </default>
+      <default class="r5a-collision">
+        <geom material="r5a-collision_material" condim="3" contype="0" conaffinity="1" priority="1" group="1" solref="0.005 1" friction="1 0.01 0.01"/>
+        <equality solimp="0.99 0.999 1e-05" solref="0.005 1"/>
+      </default>
+    </default>
+  </default>
+  <compiler angle="radian"/>
+  <asset>
+    <material name="r5a-" rgba="1 1 1 1"/>
+    <material name="r5a-default_material" rgba="0.7 0.7 0.7 1"/>
+    <material name="r5a-collision_material" rgba="1.0 0.28 0.1 0.9"/>
+    <mesh name="r5a-base_link.STL" file="./base_link.STL"/>
+    <mesh name="r5a-link1.STL" file="./link1.STL"/>
+    <mesh name="r5a-link2.STL" file="./link2.STL"/>
+    <mesh name="r5a-link3.STL" file="./link3.STL"/>
+    <mesh name="r5a-link4.STL" file="./link4.STL"/>
+    <mesh name="r5a-link5.STL" file="./link5.STL"/>
+    <mesh name="r5a-link6.STL" file="./link6.STL"/>
+    <mesh name="r5a-link7.STL" file="./link7.STL"/>
+    <mesh name="r5a-link8.STL" file="./link8.STL"/>
+  </asset>
+  <worldbody>
+    <body name="r5a-base_link" pos="0.00000000 0.00000000 0.00000000" quat="1 0 0 0" childclass="r5a-robot">
+      <joint name="r5a-floating_base"/>
+      <geom name="r5a-base_link_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-base_link.STL" class="r5a-collision"/>
+      <geom name="r5a-base_link_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-base_link.STL" class="r5a-visual"/>
+      <body name="r5a-link1" pos="0 0 0.0565" quat="1.0 0.0 0.0 0.0">
+        <joint name="r5a-joint1" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="0 0 1"/>
+        <inertial pos="0.0050395 -0.0077407 0.020897" quat="1.0 0.0 0.0 0.0" mass="0.096804" diaginertia="0.00011 5e-05 0.0001"/>
+        <geom name="r5a-link1_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link1.STL" class="r5a-collision"/>
+        <geom name="r5a-link1_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link1.STL" class="r5a-visual"/>
+        <body name="r5a-link2" pos="0.02 0 0.047" quat="1.0 0.0 0.0 0.0">
+          <joint name="r5a-joint2" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="0 1 0"/>
+          <inertial pos="-0.12992 -0.0011822 -2.6366E-05" quat="1.0 0.0 0.0 0.0" mass="1.1988" diaginertia="0.00065 0.01647 0.01646"/>
+          <geom name="r5a-link2_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link2.STL" class="r5a-collision"/>
+          <geom name="r5a-link2_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link2.STL" class="r5a-visual"/>
+          <body name="r5a-link3" pos="-0.264 0 0" quat="-3.673205103346574e-06 -0.9999999999932537 -0.0 0.0">
+            <joint name="r5a-joint3" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="0 1 0"/>
+            <inertial pos="0.16181 0.0011723 -0.05455" quat="1.0 0.0 0.0 0.0" mass="0.84082" diaginertia="0.00082 0.00849 0.00834"/>
+            <geom name="r5a-link3_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link3.STL" class="r5a-collision"/>
+            <geom name="r5a-link3_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link3.STL" class="r5a-visual"/>
+            <body name="r5a-link4" pos="0.245 -5E-05 -0.06" quat="1.0 0.0 0.0 0.0">
+              <joint name="r5a-joint4" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="0 1 0"/>
+              <inertial pos="0.041751 0.0054236 -0.03337" quat="1.0 0.0 0.0 0.0" mass="0.12432" diaginertia="0.00022 0.00025 0.00017"/>
+              <geom name="r5a-link4_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link4.STL" class="r5a-collision"/>
+              <geom name="r5a-link4_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link4.STL" class="r5a-visual"/>
+              <body name="r5a-link5" pos="0.073914 5E-05 -0.083391" quat="1.0 0.0 0.0 0.0">
+                <joint name="r5a-joint5" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="0 0 1"/>
+                <inertial pos="-8.3435E-05 -1.5428E-05 0.052216" quat="1.0 0.0 0.0 0.0" mass="0.63601" diaginertia="0.00084 0.00082 0.00026"/>
+                <geom name="r5a-link5_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link5.STL" class="r5a-collision"/>
+                <geom name="r5a-link5_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link5.STL" class="r5a-visual"/>
+                <body name="r5a-link6" pos="0.025286 0 0.083391" quat="-3.673205103346574e-06 0.9999999999932537 0.0 -0.0">
+                  <joint name="r5a-joint6" type="hinge" ref="0.0" class="r5a-motor" range="-10 10" axis="1 0 0"/>
+                  <inertial pos="0.041697 2.4368E-05 0.00014464" quat="1.0 0.0 0.0 0.0" mass="0.44089" diaginertia="0.00038 0.00028 0.0005"/>
+                  <geom name="r5a-link6_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link6.STL" class="r5a-collision"/>
+                  <geom name="r5a-link6_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link6.STL" class="r5a-visual"/>
+                  <body name="r5a-link7" pos="0.08657 0.024896 -0.0002436" quat="1.0 0.0 0.0 0.0">
+                    <joint name="r5a-joint7" type="slide" ref="0.0" class="r5a-motor" range="0 0.044" axis="0 1 0"/>
+                    <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="1.0 0.0 0.0 0.0" mass="0.064798" diaginertia="2e-05 3e-05 3e-05"/>
+                    <geom name="r5a-link7_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link7.STL" class="r5a-collision"/>
+                    <geom name="r5a-link7_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link7.STL" class="r5a-visual"/>
+                  </body>
+                  <body name="r5a-link8" pos="0.08657 -0.0249 -0.00024366" quat="1.0 0.0 0.0 0.0">
+                    <joint name="r5a-joint8" type="slide" ref="0.0" class="r5a-motor" range="0 0.044" axis="0 -1 0"/>
+                    <inertial pos="-0.000355223470270755 0.00782768751820277 0.00242005642879778" quat="1.0 0.0 0.0 0.0" mass="0.0647981725781684" diaginertia="2e-05 3e-05 3e-05"/>
+                    <geom name="r5a-link8_collision" pos="0 0 0" quat="1.0 0.0 0.0 0.0" type="mesh" mesh="r5a-link8.STL" class="r5a-collision"/>
+                    <geom name="r5a-link8_visual" pos="0 0 0" quat="1.0 0.0 0.0 0.0" material="r5a-" type="mesh" mesh="r5a-link8.STL" class="r5a-visual"/>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <site name="r5a-base_link_site" pos="0 0 0" quat="1 0 0 0"/>
+      <camera name="r5a-front_camera" mode="track" fovy="90.0" quat="4.329780281177467e-17 4.329780281177466e-17 0.7071067811865475 0.7071067811865476" pos="0.0 2.0 0.5"/>
+      <camera name="r5a-side_camera" mode="track" fovy="90.0" quat="-0.5 -0.4999999999999999 0.5 0.5000000000000001" pos="-2.0 0.0 0.5"/>
+    </body>
+    <body mocap="true" name="r5a-mocap-1" pos="0.2  0.0  0.16" quat="0 0 1 0">
+      <site name="r5a-mocap-site-1" size=".035" type="sphere" rgba="0.13 0.3 0.2 1"/>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="r5a-joint1_ctrl" joint="r5a-joint1" class="r5a-motor"/>
+    <motor name="r5a-joint2_ctrl" joint="r5a-joint2" class="r5a-motor"/>
+    <motor name="r5a-joint3_ctrl" joint="r5a-joint3" class="r5a-motor"/>
+    <motor name="r5a-joint4_ctrl" joint="r5a-joint4" class="r5a-motor"/>
+    <motor name="r5a-joint5_ctrl" joint="r5a-joint5" class="r5a-motor"/>
+    <motor name="r5a-joint6_ctrl" joint="r5a-joint6" class="r5a-motor"/>
+    <motor name="r5a-joint7_ctrl" joint="r5a-joint7" class="r5a-motor"/>
+    <motor name="r5a-joint8_ctrl" joint="r5a-joint8" class="r5a-motor"/>
+  </actuator>
+  <contact>
+    <exclude body1="r5a-base_link" body2="r5a-link1"/>
+    <exclude body1="r5a-link1" body2="r5a-link2"/>
+    <exclude body1="r5a-link2" body2="r5a-link3"/>
+    <exclude body1="r5a-link3" body2="r5a-link4"/>
+    <exclude body1="r5a-link4" body2="r5a-link5"/>
+    <exclude body1="r5a-link5" body2="r5a-link6"/>
+    <exclude body1="r5a-link6" body2="r5a-link7"/>
+    <exclude body1="r5a-link6" body2="r5a-link8"/>
+  </contact>
+  <sensor>
+    <framepos name="r5a-base_link_site_pos" objtype="site" objname="r5a-base_link_site"/>
+    <framequat name="r5a-base_link_site_quat" objtype="site" objname="r5a-base_link_site"/>
+    <framelinvel name="r5a-base_link_site_linvel" objtype="site" objname="r5a-base_link_site"/>
+    <frameangvel name="r5a-base_link_site_angvel" objtype="site" objname="r5a-base_link_site"/>
+    <velocimeter name="r5a-base_link_site_vel" site="r5a-base_link_site"/>
+  </sensor>
+  <equality>
+    <weld body1="r5a-link6" body2="r5a-mocap-1"/>
+  </equality>
+</mujoco>

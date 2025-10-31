@@ -1,0 +1,23 @@
+<mujoco model="basketball">
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  <asset>
+    <texture type="2d" name="Basketball_size6_baseColor" file="Basketball_size6_baseColor.png"/>
+    <material name="mat0" texture="Basketball_size6_baseColor" specular="0.5" shininess="0.5922348500000001"/>
+    <mesh file="basketball.obj"/>
+    <mesh file="basketball_collision_0.obj"/>
+  </asset>
+  <worldbody>
+    <body name="basketball">
+      <freejoint/>
+      <geom material="mat0" mesh="basketball" class="visual"/>
+      <geom mesh="basketball_collision_0" rgba="0.24544966027242554 0.24202080965558637 0.3209396370406503 1" class="collision"/>
+    </body>
+  </worldbody>
+</mujoco>
